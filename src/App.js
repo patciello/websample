@@ -13,8 +13,8 @@ function App() {
       <div>
         <nav>
           <div className="logo">
-            <img src={logo} alt="Canil Exemplo" />
-            Canil Exemplo
+            <img src={logo} alt="Canil DelBoux Logo" />
+            CANIL DELBOUX
           </div>
           <ul>
             <li>
@@ -33,6 +33,29 @@ function App() {
           <Route path="/dogs" element={<DogList />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <div className="bottom-bar">
+          <Link to="/">
+            <img
+              src="https://via.placeholder.com/24x24.png?text=H"
+              alt="Home"
+            />
+            Página Inicial
+          </Link>
+          <Link to="/dogs">
+            <img
+              src="https://via.placeholder.com/24x24.png?text=D"
+              alt="Dogs"
+            />
+            Seu Amigo
+          </Link>
+          <Link to="/contact">
+            <img
+              src="https://via.placeholder.com/24x24.png?text=C"
+              alt="Contact"
+            />
+            Contato
+          </Link>
+        </div>
       </div>
     </Router>
   );
