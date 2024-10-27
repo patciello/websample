@@ -6,6 +6,9 @@ import DogList from "./components/DogList";
 import Contact from "./components/Contact";
 import "./App.css";
 import logo from "./assets/logo.webp";
+import house from "./assets/house.png";
+import info from "./assets/info.png";
+import paw from "./assets/paw-print.png";
 
 function App() {
   return (
@@ -35,24 +38,15 @@ function App() {
         </Routes>
         <div className="bottom-bar">
           <Link to="/">
-            <img
-              src="https://via.placeholder.com/24x24.png?text=H"
-              alt="Home"
-            />
+            <img src={house} alt="Home" />
             Página Inicial
           </Link>
           <Link to="/dogs">
-            <img
-              src="https://via.placeholder.com/24x24.png?text=D"
-              alt="Dogs"
-            />
+            <img src={paw} alt="Dogs" />
             Seu Amigo
           </Link>
           <Link to="/contact">
-            <img
-              src="https://via.placeholder.com/24x24.png?text=C"
-              alt="Contact"
-            />
+            <img src={info} alt="Contact" />
             Contato
           </Link>
         </div>
