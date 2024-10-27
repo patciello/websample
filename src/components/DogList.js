@@ -1,4 +1,3 @@
-/* src/components/DogList.js */
 import React from "react";
 
 const dogs = [
