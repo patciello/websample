@@ -11,12 +11,19 @@ function App() {
     <Router>
       <div>
         <nav>
+          <div className="logo">
+            <img
+              src="https://via.placeholder.com/40x40.png?text=Logo"
+              alt="Canil DelBoux Logo"
+            />
+            CANIL DELBOUX
+          </div>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">Página Inicial</Link>
             </li>
             <li>
-              <Link to="/dogs">Cães Disponíveis</Link>
+              <Link to="/dogs">Seu Amigo</Link>
             </li>
             <li>
               <Link to="/contact">Contato</Link>
