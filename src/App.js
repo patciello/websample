@@ -21,7 +21,7 @@ function App() {
           </div>
           <ul>
             <li>
-              <Link to="/">Página Inicial</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
               <Link to="/dogs">Seu Amigo</Link>
@@ -39,15 +39,12 @@ function App() {
         <div className="bottom-bar">
           <Link to="/">
             <img src={house} alt="Home" />
-            Página Inicial
           </Link>
           <Link to="/dogs">
             <img src={paw} alt="Dogs" />
-            Seu Amigo
           </Link>
           <Link to="/contact">
             <img src={info} alt="Contact" />
-            Contato
           </Link>
         </div>
       </div>
