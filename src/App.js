@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import DogList from "./components/DogList";
 import Contact from "./components/Contact";
 import "./App.css";
+import logo from "./assets/logo.webp";
 
 function App() {
   return (
@@ -12,11 +13,8 @@ function App() {
       <div>
         <nav>
           <div className="logo">
-            <img
-              src="https://via.placeholder.com/40x40.png?text=Logo"
-              alt="Canil DelBoux Logo"
-            />
-            CANIL DELBOUX
+            <img src={logo} alt="Canil Exemplo" />
+            Canil Exemplo
           </div>
           <ul>
             <li>
