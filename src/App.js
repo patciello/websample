@@ -9,6 +9,7 @@ import logo from "./assets/logo.webp";
 import house from "./assets/house.png";
 import info from "./assets/info.png";
 import paw from "./assets/paw-print.png";
+import BottomBar from "./components/BottomBar";
 
 function App() {
   return (
@@ -16,8 +17,8 @@ function App() {
       <div>
         <nav>
           <div className="logo">
-            <img src={logo} alt="Canil DelBoux Logo" />
-            CANIL DELBOUX
+            <img src={logo} alt="Livres Sample" />
+            Livres Sample
           </div>
           <ul>
             <li>
@@ -37,15 +38,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <div className="bottom-bar">
-          <Link to="/">
-            <img src={house} alt="Home" />
-          </Link>
-          <Link to="/dogs">
-            <img src={paw} alt="Dogs" />
-          </Link>
-          <Link to="/contact">
-            <img src={info} alt="Contact" />
-          </Link>
+          <BottomBar />
         </div>
       </div>
     </Router>
