@@ -8,13 +8,21 @@ const BottomBarContainer = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 80px;
   background-color: #282c34;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-top: 1px solid #282c34; /* Borda superior */
-  border-bottom: 5px solid #282c34; /* Borda inferior personalizada */
+  border-top: 1px solid #444;
+  padding-bottom: 20px;
+`;
+const BottomBarLowerSection = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20px; /* Altura da parte preta na parte inferior */
+  background-color: #000000; /* Cor preta para a parte inferior */
 `;
 
 const IconButton = styled(motion.button)`
@@ -23,28 +31,48 @@ const IconButton = styled(motion.button)`
   color: #ffffff;
   font-size: 1.5rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 10px;
   cursor: pointer;
-`;
 
+  &:hover {
+    color: #61dafb;
+  }
+
+  span {
+    font-size: 0.8rem;
+    margin-top: 5px;
+  }
+`;
 const BottomBar = () => {
   return (
-    <BottomBarContainer>
-      {[<FaHome />, <FaSearch />, <FaPlus />, <FaBell />, <FaUser />].map(
-        (Icon, index) => (
-          <IconButton
-            key={index}
-            whileHover={{ scale: 1.2, color: "#61dafb" }}
-            whileTap={{ scale: 0.9 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            {Icon}
-          </IconButton>
-        )
-      )}
-    </BottomBarContainer>
+    <>
+      <BottomBarContainer>
+        <IconButton whileHover={{ scale: 1.2, color: "#61dafb" }}>
+          <FaHome />
+          <span>Home</span>
+        </IconButton>
+        <IconButton whileHover={{ scale: 1.2, color: "#61dafb" }}>
+          <FaSearch />
+          <span>Search</span>
+        </IconButton>
+        <IconButton whileHover={{ scale: 1.2, color: "#61dafb" }}>
+          <FaPlus />
+          <span>Scan</span>
+        </IconButton>
+        <IconButton whileHover={{ scale: 1.2, color: "#61dafb" }}>
+          <FaBell />
+          <span>History</span>
+        </IconButton>
+        <IconButton whileHover={{ scale: 1.2, color: "#61dafb" }}>
+          <FaUser />
+          <span>Profile</span>
+        </IconButton>
+      </BottomBarContainer>
+      <BottomBarLowerSection />
+    </>
   );
 };
 
