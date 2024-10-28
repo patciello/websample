@@ -14,6 +14,8 @@ const BottomBarContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   border-top: 1px solid #444;
+  border-top: 1px solid #444; /* Borda superior */
+  border-bottom: 5px solid #61dafb; /* Borda inferior personalizada */
 `;
 
 const IconButton = styled(motion.button)`
