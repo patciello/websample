@@ -1,6 +1,6 @@
-// BottomBar.js
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import { FaHome, FaSearch, FaPlus, FaBell, FaUser } from "react-icons/fa";
 
 const BottomBarContainer = styled.div`
@@ -16,7 +16,7 @@ const BottomBarContainer = styled.div`
   border-top: 1px solid #444;
 `;
 
-const IconButton = styled.button`
+const IconButton = styled(motion.button)`
   background: none;
   border: none;
   color: #ffffff;
@@ -26,30 +26,23 @@ const IconButton = styled.button`
   justify-content: center;
   padding: 10px;
   cursor: pointer;
-
-  &:hover {
-    color: #61dafb;
-  }
 `;
 
 const BottomBar = () => {
   return (
     <BottomBarContainer>
-      <IconButton>
-        <FaHome />
-      </IconButton>
-      <IconButton>
-        <FaSearch />
-      </IconButton>
-      <IconButton>
-        <FaPlus />
-      </IconButton>
-      <IconButton>
-        <FaBell />
-      </IconButton>
-      <IconButton>
-        <FaUser />
-      </IconButton>
+      {[<FaHome />, <FaSearch />, <FaPlus />, <FaBell />, <FaUser />].map(
+        (Icon, index) => (
+          <IconButton
+            key={index}
+            whileHover={{ scale: 1.2, color: "#61dafb" }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            {Icon}
+          </IconButton>
+        )
+      )}
     </BottomBarContainer>
   );
 };
