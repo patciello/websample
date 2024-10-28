@@ -12,34 +12,50 @@ import paw from "./assets/paw-print.png";
 import BottomBar from "./components/BottomBar";
 
 function App() {
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
   return (
     <Router>
       <div>
-        <nav>
-          <div className="logo">
-            <img src={logo} alt="Livres Sample" />
-            Livres Sample
+        {isMobile ? (
+          <>
+            <nav>
+              <div className="logo">
+                <img src={logo} alt="Livres Sample" />
+                Livres Sample
+              </div>
+              <ul>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/dogs">Seu Amigo</Link>
+                </li>
+                <li>
+                  <Link to="/contact">Contato</Link>
+                </li>
+              </ul>
+            </nav>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/dogs" element={<DogList />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+            <div className="bottom-bar">
+              <BottomBar />
+            </div>
+          </>
+        ) : (
+          <div className="container">
+            <h1>
+              Este aplicativo está disponível apenas para dispositivos móveis.
+            </h1>
+            <p>
+              Por favor, acesse o aplicativo em um dispositivo Android ou
+              iPhone.
+            </p>
           </div>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/dogs">Seu Amigo</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contato</Link>
-            </li>
-          </ul>
-        </nav>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/dogs" element={<DogList />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-        <div className="bottom-bar">
-          <BottomBar />
-        </div>
+        )}
       </div>
     </Router>
   );
