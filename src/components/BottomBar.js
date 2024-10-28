@@ -9,12 +9,12 @@ const BottomBarContainer = styled.div`
   left: 0;
   right: 0;
   height: 80px;
-  background-color: #282c34;
+  padding-bottom: 20px; /* Ajuste esse valor para garantir uma distância confortável do Home Indicator */
+  background: linear-gradient(to top, #000000 20%, #282c34 80%);
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-top: 1px solid #444;
-  padding-bottom: 20px;
+  z-index: 10; /* Mantém a barra acima de outros elementos */
 `;
 const BottomBarLowerSection = styled.div`
   position: absolute;
