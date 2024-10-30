@@ -1,5 +1,6 @@
 import { useState } from "react";
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { GoHome } from "react-icons/go";
@@ -48,7 +49,7 @@ const IconButton = styled(motion.button)`
   &:active {
     box-shadow: none;
     font-size: "3rem";
-
+  }
   span {
     margin-top: 2px;
   }
@@ -64,6 +65,7 @@ const BottomBar = () => {
   return (
     <BottomBarContainer>
       <IconButton
+        to="/"
         isActive={activeIcon === "home"}
         onClick={() => handleIconClick("home")}
         whileHover={{ scale: 1.1 }}
@@ -71,6 +73,7 @@ const BottomBar = () => {
         <GoHome />
       </IconButton>
       <IconButton
+        to="/category"
         isActive={activeIcon === "category"}
         onClick={() => handleIconClick("category")}
         whileHover={{ scale: 1.1 }}
@@ -78,6 +81,7 @@ const BottomBar = () => {
         <TbCategory />
       </IconButton>
       <IconButton
+        to="/events"
         isActive={activeIcon === "event"}
         onClick={() => handleIconClick("event")}
         whileHover={{ scale: 1.1 }}
@@ -85,6 +89,7 @@ const BottomBar = () => {
         <MdOutlineEventAvailable />
       </IconButton>
       <IconButton
+        to="/fastings"
         isActive={activeIcon === "praying"}
         onClick={() => handleIconClick("praying")}
         whileHover={{ scale: 1.1 }}

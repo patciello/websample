@@ -2,8 +2,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Home from "./components/Home";
-import DogList from "./components/DogList";
-import Contact from "./components/Contact";
+import Category from "./components/Category";
+import Events from "./components/Events";
+import Fastings from "./components/Fastings";
 import "./App.css";
 import logo from "./assets/logo.webp";
 import house from "./assets/house.png";
@@ -19,27 +20,11 @@ function App() {
       <div>
         {isMobile ? (
           <>
-            <nav>
-              <div className="logo">
-                <img src={logo} alt="Livres Sample" />
-                Livres Sample
-              </div>
-              <ul>
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="/dogs">Seu Amigo</Link>
-                </li>
-                <li>
-                  <Link to="/contact">Contato</Link>
-                </li>
-              </ul>
-            </nav>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/dogs" element={<DogList />} />
-              <Route path="/contact" element={<Contact />} />
+              <Route path="/category" element={<Category />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/fastings" element={<Fastings />} />
             </Routes>
             <div className="bottom-bar">
               <BottomBar />
@@ -48,11 +33,12 @@ function App() {
         ) : (
           <div className="container">
             <h1>
-              Este aplicativo está disponível apenas para dispositivos móveis.
+              Olá! Este é o app da Livres, ainda estamos em construção, por este
+              motivo não vai fucionar por aqui...Mas é por pouco tempo!
             </h1>
             <p>
-              Por favor, acesse o aplicativo em um dispositivo Android ou
-              iPhone.
+              Aqui está o QR Code para acessa-lo agora mesmo! Que Deus te
+              abençoe!
             </p>
           </div>
         )}
