@@ -1,3 +1,4 @@
+import { useState } from "react";
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -12,7 +13,11 @@ const BottomBarContainer = styled.div`
   left: 4px; /* Margem lateral para os cantos arredondados */
   right: 4px; /* Margem lateral para os cantos arredondados */
   height: 70px;
-  background: rgba(40, 40, 40, 0.9); /* Fundo escuro com transparência */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8),
+    rgba(40, 44, 52, 0.8)
+  );
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -25,7 +30,8 @@ const BottomBarContainer = styled.div`
 const IconButton = styled(motion.button)`
   background: none;
   border: none;
-  color: #ad2e00; /* Icons Color */
+  color: ${({ isActive }) => (isActive ? "#dbdbdb" : "#ad2e00")};
+  font-size: ${({ isActive }) => (isActive ? "2.5rem" : "2rem")};
   font-size: 2rem; /* Resize Icons */
   display: flex;
   flex-direction: column;
@@ -33,16 +39,12 @@ const IconButton = styled(motion.button)`
   justify-content: center;
   padding: 10px;
   cursor: pointer;
-
-  &:hover {
-    color: #ffa500 !important; /* Laranja claro no hover */
-  }
+  transition: color 0.3s ease;
 
   &:focus,
   &:active {
     outline: none; /* Remove a borda amarela padrão ao focar/clicar no botão */
     box-shadow: none; /* Remove qualquer sombra que o navegador possa aplicar */
-    color: #ff4500; /* Mantém a cor laranja para evitar a mudança indesejada */
   }
 
   span {
@@ -51,18 +53,40 @@ const IconButton = styled(motion.button)`
 `;
 
 const BottomBar = () => {
+  const [activeIcon, setActiveIcon] = useState("home");
+
+  const handleIconClick = (icon) => {
+    setActiveIcon(icon);
+  };
+
   return (
     <BottomBarContainer>
-      <IconButton whileHover={{ scale: 1.1 }}>
+      <IconButton
+        isActive={activeIcon === "home"}
+        onClick={() => handleIconClick("home")}
+        whileHover={{ scale: 1.1 }}
+      >
         <GoHome />
       </IconButton>
-      <IconButton whileHover={{ scale: 1.1 }}>
+      <IconButton
+        isActive={activeIcon === "category"}
+        onClick={() => handleIconClick("category")}
+        whileHover={{ scale: 1.1 }}
+      >
         <TbCategory />
       </IconButton>
-      <IconButton whileHover={{ scale: 1.1 }}>
+      <IconButton
+        isActive={activeIcon === "event"}
+        onClick={() => handleIconClick("event")}
+        whileHover={{ scale: 1.1 }}
+      >
         <MdOutlineEventAvailable />
       </IconButton>
-      <IconButton whileHover={{ scale: 1.1 }}>
+      <IconButton
+        isActive={activeIcon === "praying"}
+        onClick={() => handleIconClick("praying")}
+        whileHover={{ scale: 1.1 }}
+      >
         <PiHandsPrayingDuotone />
       </IconButton>
     </BottomBarContainer>
