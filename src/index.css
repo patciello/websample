@@ -105,7 +105,8 @@ button {
 }
 
 button:hover {
-  background-color: #a73434;
+  background-color: #afafaf;
+  border-radius: 5px;
 }
 
 /* Estilo para a lista de cães */

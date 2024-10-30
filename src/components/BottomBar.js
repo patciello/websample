@@ -8,15 +8,14 @@ import { PiHandsPrayingDuotone } from "react-icons/pi";
 
 const BottomBarContainer = styled.div`
   position: fixed;
-  bottom: 20px; /* Levanta um pouco a barra para não encostar na borda inferior */
-  left: 10px; /* Margem lateral para os cantos arredondados */
-  right: 10px; /* Margem lateral para os cantos arredondados */
+  left: 4px; /* Margem lateral para os cantos arredondados */
+  right: 4px; /* Margem lateral para os cantos arredondados */
   height: 70px;
   background: rgba(40, 40, 40, 0.9); /* Fundo escuro com transparência */
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-radius: 25px; /* Cantos arredondados */
+  border-radius: 20px; /* Cantos arredondados */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidade */
   z-index: 10;
   backdrop-filter: blur(10px);
@@ -25,8 +24,8 @@ const BottomBarContainer = styled.div`
 const IconButton = styled(motion.button)`
   background: none;
   border: none;
-  color: #ff4500; /* Cor laranja dos ícones */
-  font-size: 2rem; /* Aumenta o tamanho dos ícones */
+  color: #ad2e00; /* Icons Color */
+  font-size: 2rem; /* Resize Icons */
   display: flex;
   flex-direction: column;
   align-items: center;
