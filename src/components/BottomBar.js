@@ -8,6 +8,7 @@ import { PiHandsPrayingDuotone } from "react-icons/pi";
 
 const BottomBarContainer = styled.div`
   position: fixed;
+  bottom: 0;
   left: 4px; /* Margem lateral para os cantos arredondados */
   right: 4px; /* Margem lateral para os cantos arredondados */
   height: 70px;
