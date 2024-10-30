@@ -1,9 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { FaHome, FaSearch, FaPlus, FaBell, FaUser } from "react-icons/fa";
-
-//Icons Set
 import { GoHome } from "react-icons/go";
 import { TbCategory } from "react-icons/tb";
 import { MdOutlineEventAvailable } from "react-icons/md";
@@ -27,6 +24,7 @@ const BottomBarContainer = styled.div`
   z-index: 10;
   backdrop-filter: blur(10px);
 `;
+
 const BottomBarLowerSection = styled.div`
   position: absolute;
   bottom: 0;
@@ -40,6 +38,7 @@ const IconButton = styled(motion.button)`
   background: none;
   border: none;
   color: #ffffff;
+  font-size: 2rem; /* Aumenta o tamanho dos ícones */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,28 +47,32 @@ const IconButton = styled(motion.button)`
   cursor: pointer;
 
   &:hover {
-    color: #c62f2f !important;
+    color: #c62f2f !important; /* Cor de hover personalizada */
+  }
+
+  &:focus {
+    outline: none; /* Remove a borda amarela padrão ao focar/clicar no botão */
   }
 
   span {
     margin-top: 2px;
-    margin-top: 5px;
   }
 `;
+
 const BottomBar = () => {
   return (
     <>
       <BottomBarContainer>
-        <IconButton whileHover={{ scale: 1, color: "#bfbfbf" }}>
+        <IconButton whileHover={{ scale: 1.1, color: "#bfbfbf" }}>
           <GoHome />
         </IconButton>
-        <IconButton whileHover={{ scale: 1, color: "#bfbfbf" }}>
+        <IconButton whileHover={{ scale: 1.1, color: "#bfbfbf" }}>
           <TbCategory />
         </IconButton>
-        <IconButton whileHover={{ scale: 1, color: "#bfbfbf" }}>
+        <IconButton whileHover={{ scale: 1.1, color: "#bfbfbf" }}>
           <MdOutlineEventAvailable />
         </IconButton>
-        <IconButton whileHover={{ scale: 1, color: "#bfbfbf" }}>
+        <IconButton whileHover={{ scale: 1.1, color: "#bfbfbf" }}>
           <PiHandsPrayingDuotone />
         </IconButton>
       </BottomBarContainer>
