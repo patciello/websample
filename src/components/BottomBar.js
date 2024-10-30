@@ -8,36 +8,24 @@ import { PiHandsPrayingDuotone } from "react-icons/pi";
 
 const BottomBarContainer = styled.div`
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  padding-bottom: 10px; /* Ajuste esse valor para garantir uma distância confortável do Home Indicator */
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.8),
-    rgba(40, 44, 52, 0.8)
-  );
+  bottom: 20px; /* Levanta um pouco a barra para não encostar na borda inferior */
+  left: 10px; /* Margem lateral para os cantos arredondados */
+  right: 10px; /* Margem lateral para os cantos arredondados */
+  height: 70px;
+  background: rgba(40, 40, 40, 0.9); /* Fundo escuro com transparência */
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-radius: 25px; /* Cantos arredondados */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidade */
   z-index: 10;
   backdrop-filter: blur(10px);
-`;
-
-const BottomBarLowerSection = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 10px; /* Altura da parte preta na parte inferior */
-  background-color: #000000; /* Cor preta para a parte inferior */
 `;
 
 const IconButton = styled(motion.button)`
   background: none;
   border: none;
-  color: #ffffff;
+  color: #ff4500; /* Cor laranja dos ícones */
   font-size: 2rem; /* Aumenta o tamanho dos ícones */
   display: flex;
   flex-direction: column;
@@ -47,17 +35,14 @@ const IconButton = styled(motion.button)`
   cursor: pointer;
 
   &:hover {
-    color: #c62f2f !important; /* Cor de hover personalizada */
+    color: #ffa500 !important; /* Laranja claro no hover */
   }
 
-  &:focus {
-    outline: none; /* Remove a borda amarela padrão ao focar/clicar no botão */
-  }
-
+  &:focus,
   &:active {
     outline: none; /* Remove a borda amarela padrão ao focar/clicar no botão */
     box-shadow: none; /* Remove qualquer sombra que o navegador possa aplicar */
-    color: #ffffff; /* Mantém a cor branca para evitar a mudança indesejada */
+    color: #ff4500; /* Mantém a cor laranja para evitar a mudança indesejada */
   }
 
   span {
@@ -67,23 +52,20 @@ const IconButton = styled(motion.button)`
 
 const BottomBar = () => {
   return (
-    <>
-      <BottomBarContainer>
-        <IconButton whileHover={{ scale: 1.1, color: "#bfbfbf" }}>
-          <GoHome />
-        </IconButton>
-        <IconButton whileHover={{ scale: 1.1, color: "#bfbfbf" }}>
-          <TbCategory />
-        </IconButton>
-        <IconButton whileHover={{ scale: 1.1, color: "#bfbfbf" }}>
-          <MdOutlineEventAvailable />
-        </IconButton>
-        <IconButton whileHover={{ scale: 1.1, color: "#bfbfbf" }}>
-          <PiHandsPrayingDuotone />
-        </IconButton>
-      </BottomBarContainer>
-      <BottomBarLowerSection />
-    </>
+    <BottomBarContainer>
+      <IconButton whileHover={{ scale: 1.1 }}>
+        <GoHome />
+      </IconButton>
+      <IconButton whileHover={{ scale: 1.1 }}>
+        <TbCategory />
+      </IconButton>
+      <IconButton whileHover={{ scale: 1.1 }}>
+        <MdOutlineEventAvailable />
+      </IconButton>
+      <IconButton whileHover={{ scale: 1.1 }}>
+        <PiHandsPrayingDuotone />
+      </IconButton>
+    </BottomBarContainer>
   );
 };
 
