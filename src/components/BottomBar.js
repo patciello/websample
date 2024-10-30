@@ -48,7 +48,7 @@ const IconButton = styled(motion.button)`
   cursor: pointer;
 
   &:hover {
-    color: #c62f2f;
+    color: #c62f2f !important;
   }
 
   span {
