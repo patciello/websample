@@ -104,11 +104,6 @@ button {
   font-weight: bold;
 }
 
-button:hover {
-  background-color: #afafaf;
-  border-radius: 5px;
-}
-
 /* Estilo para a lista de cães */
 .dog-list {
   display: flex;
