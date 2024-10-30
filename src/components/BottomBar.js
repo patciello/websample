@@ -28,7 +28,7 @@ const BottomBarContainer = styled.div`
   backdrop-filter: blur(10px);
 `;
 
-const IconButton = styled(motion(Link))`
+const IconButton = styled(motion.button)`
   background: none;
   border: none;
   color: ${({ isActive }) => (isActive ? "#dbdbdb" : "#ad2e00")};
@@ -55,6 +55,10 @@ const IconButton = styled(motion(Link))`
   }
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: none; /* Remove sublinhado padrão do Link */
+`;
+
 const BottomBar = () => {
   const [activeIcon, setActiveIcon] = useState("home");
 
@@ -64,38 +68,42 @@ const BottomBar = () => {
 
   return (
     <BottomBarContainer>
-      <IconButton
-        to="/"
-        isActive={activeIcon === "home"}
-        onClick={() => handleIconClick("home")}
-        whileHover={{ scale: 2.1 }}
-      >
-        <GoHome />
-      </IconButton>
-      <IconButton
-        to="/category"
-        isActive={activeIcon === "category"}
-        onClick={() => handleIconClick("category")}
-        whileHover={{ scale: 1.1 }}
-      >
-        <TbCategory />
-      </IconButton>
-      <IconButton
-        to="/events"
-        isActive={activeIcon === "event"}
-        onClick={() => handleIconClick("event")}
-        whileHover={{ scale: 1.1 }}
-      >
-        <MdOutlineEventAvailable />
-      </IconButton>
-      <IconButton
-        to="/fastings"
-        isActive={activeIcon === "praying"}
-        onClick={() => handleIconClick("praying")}
-        whileHover={{ scale: 1.1 }}
-      >
-        <PiHandsPrayingDuotone />
-      </IconButton>
+      <StyledLink to="/" onClick={() => handleIconClick("home")}>
+        <IconButton
+          isActive={activeIcon === "home"}
+          onClick={() => handleIconClick("home")}
+          whileHover={{ scale: 2.1 }}
+        >
+          <GoHome />
+        </IconButton>
+      </StyledLink>
+      <StyledLink to="/" onClick={() => handleIconClick("home")}>
+        <IconButton
+          isActive={activeIcon === "category"}
+          onClick={() => handleIconClick("category")}
+          whileHover={{ scale: 1.1 }}
+        >
+          <TbCategory />
+        </IconButton>
+      </StyledLink>
+      <StyledLink to="/" onClick={() => handleIconClick("home")}>
+        <IconButton
+          isActive={activeIcon === "event"}
+          onClick={() => handleIconClick("event")}
+          whileHover={{ scale: 1.1 }}
+        >
+          <MdOutlineEventAvailable />
+        </IconButton>
+      </StyledLink>
+      <StyledLink to="/" onClick={() => handleIconClick("home")}>
+        <IconButton
+          isActive={activeIcon === "praying"}
+          onClick={() => handleIconClick("praying")}
+          whileHover={{ scale: 1.1 }}
+        >
+          <PiHandsPrayingDuotone />
+        </IconButton>
+      </StyledLink>
     </BottomBarContainer>
   );
 };
