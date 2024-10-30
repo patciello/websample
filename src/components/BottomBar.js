@@ -68,7 +68,7 @@ const BottomBar = () => {
         to="/"
         isActive={activeIcon === "home"}
         onClick={() => handleIconClick("home")}
-        whileHover={{ scale: 1.1 }}
+        whileHover={{ scale: 2.1 }}
       >
         <GoHome />
       </IconButton>
