@@ -16,7 +16,7 @@ const BottomBarContainer = styled.div`
   background: linear-gradient(
     to top,
     rgba(0, 0, 0, 0.8),
-    rgba(40, 44, 52, 0.8)
+    rgba(40, 40, 45, 0.8)
   );
   display: flex;
   justify-content: space-around;
@@ -41,9 +41,12 @@ const IconButton = styled(motion.button)`
   cursor: pointer;
   transition: color 0.3s ease;
 
-  &:focus,
+  &:focus {
+    border-radius: 15px;
+    outline: 3px solid #dbdbdb;
+    outline-offset: 4px;
+  }
   &:active {
-    outline: none; /* Remove a borda amarela padrão ao focar/clicar no botão */
     box-shadow: none; /* Remove qualquer sombra que o navegador possa aplicar */
   }
 
