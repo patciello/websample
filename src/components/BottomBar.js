@@ -46,8 +46,8 @@ const IconButton = styled(motion.button)`
     outline: none;
   }
   &:active {
-    box-shadow: none; /* Remove qualquer sombra que o navegador possa aplicar */
-  }
+    box-shadow: none;
+    font-size: "3rem";
 
   span {
     margin-top: 2px;
