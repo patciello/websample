@@ -15,7 +15,7 @@ const BottomBarContainer = styled.div`
   left: 0;
   right: 0;
   height: 80px;
-  padding-bottom: 20px; /* Ajuste esse valor para garantir uma distância confortável do Home Indicator */
+  padding-bottom: 5px; /* Ajuste esse valor para garantir uma distância confortável do Home Indicator */
   background: linear-gradient(
     to top,
     rgba(0, 0, 0, 0.8),
