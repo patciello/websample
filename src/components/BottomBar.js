@@ -40,7 +40,6 @@ const IconButton = styled(motion.button)`
   background: none;
   border: none;
   color: #ffffff;
-  font-size: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,28 +48,28 @@ const IconButton = styled(motion.button)`
   cursor: pointer;
 
   &:hover {
-    color: #2e2e2e;
+    color: #c62f2f;
   }
 
   span {
     font-size: 0.8rem;
-    margin-top: 5px;
+    margin-top: 2px;
   }
 `;
 const BottomBar = () => {
   return (
     <>
       <BottomBarContainer>
-        <IconButton whileHover={{ scale: 1.2, color: "#bfbfbf" }}>
+        <IconButton whileHover={{ scale: 2.0, color: "#bfbfbf" }}>
           <GoHome />
         </IconButton>
-        <IconButton whileHover={{ scale: 1.2, color: "#bfbfbf" }}>
+        <IconButton whileHover={{ scale: 2.0, color: "#bfbfbf" }}>
           <TbCategory />
         </IconButton>
-        <IconButton whileHover={{ scale: 1.2, color: "#bfbfbf" }}>
+        <IconButton whileHover={{ scale: 2.0, color: "#bfbfbf" }}>
           <MdOutlineEventAvailable />
         </IconButton>
-        <IconButton whileHover={{ scale: 1.2, color: "#bfbfbf" }}>
+        <IconButton whileHover={{ scale: 2.0, color: "#bfbfbf" }}>
           <PiHandsPrayingDuotone />
         </IconButton>
       </BottomBarContainer>
