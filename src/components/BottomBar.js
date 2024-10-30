@@ -42,9 +42,7 @@ const IconButton = styled(motion.button)`
   transition: color 0.3s ease;
 
   &:focus {
-    border-radius: 15px;
-    outline: 3px solid #dbdbdb;
-    outline-offset: 4px;
+    outline: none;
   }
   &:active {
     box-shadow: none; /* Remove qualquer sombra que o navegador possa aplicar */
