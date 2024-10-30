@@ -30,9 +30,7 @@ const BottomBarContainer = styled.div`
 
 const IconButton = styled(motion.button)`
   background: none;
-  border: none;
-  color: ${({ isActive }) => (isActive ? "#dbdbdb" : "#ad2e00")};
-  font-size: ${({ isActive }) => (isActive ? "2.5rem" : "2rem")};
+
   font-size: 2rem; /* Resize Icons */
   display: flex;
   flex-direction: column;
@@ -41,7 +39,6 @@ const IconButton = styled(motion.button)`
   padding: 10px;
   cursor: pointer;
   transition: color 0.3s ease;
-  -webkit-tap-highlight-color: transparent;
 
   &:focus {
     outline: none;
@@ -56,7 +53,10 @@ const IconButton = styled(motion.button)`
 `;
 
 const StyledLink = styled(Link)`
-  text-decoration: none; /* Remove sublinhado padrão do Link */
+  border: none;
+  color: ${({ isActive }) => (isActive ? "#dbdbdb" : "#ad2e00")};
+  font-size: ${({ isActive }) => (isActive ? "2.5rem" : "2rem")};
+  text-decoration: none;
   -webkit-tap-highlight-color: transparent;
   transition: color 0.3s ease;
 `;
