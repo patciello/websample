@@ -28,7 +28,7 @@ const BottomBarContainer = styled.div`
   backdrop-filter: blur(10px);
 `;
 
-const IconButton = styled(motion.button)`
+const IconButton = styled(motion(Link))`
   background: none;
   border: none;
   color: ${({ isActive }) => (isActive ? "#dbdbdb" : "#ad2e00")};
