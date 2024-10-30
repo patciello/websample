@@ -57,6 +57,8 @@ const IconButton = styled(motion.button)`
 
 const StyledLink = styled(Link)`
   text-decoration: none; /* Remove sublinhado padrão do Link */
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.3s ease;
 `;
 
 const BottomBar = () => {
@@ -77,7 +79,7 @@ const BottomBar = () => {
           <GoHome />
         </IconButton>
       </StyledLink>
-      <StyledLink to="/" onClick={() => handleIconClick("home")}>
+      <StyledLink to="/category" onClick={() => handleIconClick("home")}>
         <IconButton
           isActive={activeIcon === "category"}
           onClick={() => handleIconClick("category")}
@@ -86,7 +88,7 @@ const BottomBar = () => {
           <TbCategory />
         </IconButton>
       </StyledLink>
-      <StyledLink to="/" onClick={() => handleIconClick("home")}>
+      <StyledLink to="/events" onClick={() => handleIconClick("home")}>
         <IconButton
           isActive={activeIcon === "event"}
           onClick={() => handleIconClick("event")}
@@ -95,7 +97,7 @@ const BottomBar = () => {
           <MdOutlineEventAvailable />
         </IconButton>
       </StyledLink>
-      <StyledLink to="/" onClick={() => handleIconClick("home")}>
+      <StyledLink to="/fastings" onClick={() => handleIconClick("home")}>
         <IconButton
           isActive={activeIcon === "praying"}
           onClick={() => handleIconClick("praying")}
