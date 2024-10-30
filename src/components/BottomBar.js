@@ -60,16 +60,16 @@ const BottomBar = () => {
   return (
     <>
       <BottomBarContainer>
-        <IconButton whileHover={{ scale: 2.0, color: "#bfbfbf" }}>
+        <IconButton whileHover={{ scale: 1, color: "#bfbfbf" }}>
           <GoHome />
         </IconButton>
-        <IconButton whileHover={{ scale: 2.0, color: "#bfbfbf" }}>
+        <IconButton whileHover={{ scale: 1, color: "#bfbfbf" }}>
           <TbCategory />
         </IconButton>
-        <IconButton whileHover={{ scale: 2.0, color: "#bfbfbf" }}>
+        <IconButton whileHover={{ scale: 1, color: "#bfbfbf" }}>
           <MdOutlineEventAvailable />
         </IconButton>
-        <IconButton whileHover={{ scale: 2.0, color: "#bfbfbf" }}>
+        <IconButton whileHover={{ scale: 1, color: "#bfbfbf" }}>
           <PiHandsPrayingDuotone />
         </IconButton>
       </BottomBarContainer>
