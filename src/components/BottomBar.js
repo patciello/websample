@@ -54,6 +54,12 @@ const IconButton = styled(motion.button)`
     outline: none; /* Remove a borda amarela padrão ao focar/clicar no botão */
   }
 
+  &:active {
+    outline: none; /* Remove a borda amarela padrão ao focar/clicar no botão */
+    box-shadow: none; /* Remove qualquer sombra que o navegador possa aplicar */
+    color: #ffffff; /* Mantém a cor branca para evitar a mudança indesejada */
+  }
+
   span {
     margin-top: 2px;
   }
