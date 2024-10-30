@@ -40,6 +40,7 @@ const IconButton = styled(motion.button)`
   padding: 10px;
   cursor: pointer;
   transition: color 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
 
   &:focus {
     outline: none;
