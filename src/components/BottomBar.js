@@ -44,6 +44,7 @@ const IconButton = styled(motion.button)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 10px;
   cursor: pointer;
 
   &:hover {
@@ -52,6 +53,7 @@ const IconButton = styled(motion.button)`
 
   span {
     margin-top: 2px;
+    margin-top: 5px;
   }
 `;
 const BottomBar = () => {
