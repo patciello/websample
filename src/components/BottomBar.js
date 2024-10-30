@@ -52,7 +52,6 @@ const IconButton = styled(motion.button)`
   }
 
   span {
-    font-size: 0.8rem;
     margin-top: 2px;
   }
 `;
