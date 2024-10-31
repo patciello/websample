@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { CiPlay1 } from "react-icons/ci";
+import { FaPlay } from "react-icons/fa";
 
 export const StoriesContainer = styled.div`
   display: flex;
@@ -54,7 +54,7 @@ export const StoryInfo = styled.div`
   text-align: center;
 `;
 
-export const PlayIcon = styled(CiPlay1)`
+export const PlayIcon = styled(FaPlay)`
   position: absolute;
   top: 50%;
   left: 50%;
