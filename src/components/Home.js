@@ -58,30 +58,19 @@ const Home = () => {
           <h1>Tabernaculos 2K24</h1>
         </div>
         {youtubeVideos.map((video) => (
-          <Stories.OuterCard key={video.id.videoId}>
-            <Stories.StoryCard
-              key={video.id.videoId}
-              onClick={() => openYouTubeVideo(video.id.videoId)}
-            >
-              <Stories.Thumbnail
-                src={video.snippet.thumbnails.high.url}
-                alt={video.snippet.title}
-              />
-              <Stories.PlayIcon />
-              <Stories.StoryInfo>
-                <Stories.Title>{video.snippet.title}</Stories.Title>
-              </Stories.StoryInfo>
-            </Stories.StoryCard>
-            <Stories.VideoInfo>
+          <Stories.StoryCard
+            key={video.id.videoId}
+            onClick={() => openYouTubeVideo(video.id.videoId)}
+          >
+            <Stories.Thumbnail
+              src={video.snippet.thumbnails.high.url}
+              alt={video.snippet.title}
+            />
+            <Stories.PlayIcon />
+            <Stories.StoryInfo>
               <Stories.Title>{video.snippet.title}</Stories.Title>
-              <Stories.VideoDate>
-                {new Date(video.snippet.publishedAt).toLocaleDateString()}
-              </Stories.VideoDate>
-              <Stories.ViewsCount>
-                {video.statistics.viewCount} visualizações
-              </Stories.ViewsCount>
-            </Stories.VideoInfo>
-          </Stories.OuterCard>
+            </Stories.StoryInfo>
+          </Stories.StoryCard>
         ))}
       </Stories.StoriesContainer>
     </>
