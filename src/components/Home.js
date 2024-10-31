@@ -8,7 +8,7 @@ import * as Stories from "./Stories";
 const Home = () => {
   const [youtubeVideos, setYoutubeVideos] = useState([]);
   const channelId = "UCyGlnihqrujBPlGXs6yi42g"; // Substitua pelo ID do canal desejado
-  const apiKey = "REACT_APP_YOUTUBE_API_KEY"; // Substitua pela sua chave de API do YouTube
+  const apiKey = process.env.REACT_APP_YOUTUBE_API_KEY; // Substitua pela sua chave de API do YouTube
 
   useEffect(() => {
     const fetchYouTubeVideos = async () => {
