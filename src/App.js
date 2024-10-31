@@ -6,10 +6,6 @@ import Category from "./components/Category";
 import Events from "./components/Events";
 import Fastings from "./components/Fastings";
 import "./App.css";
-import logo from "./assets/logo.webp";
-import house from "./assets/house.png";
-import info from "./assets/info.png";
-import paw from "./assets/paw-print.png";
 import BottomBar from "./components/BottomBar";
 
 function App() {
