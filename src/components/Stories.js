@@ -12,6 +12,7 @@ export const StoriesContainer = styled.div`
 `;
 
 export const StoryCard = styled.div`
+  position: relative;
   width: 100%;
   max-width: 600px;
   margin-bottom: 15px;
