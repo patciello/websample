@@ -46,7 +46,7 @@ const Home = () => {
   };
 
   return (
-    <div className="container">
+    <div>
       <Stories.TopBar>
         <Stories.Logo src={logo} alt="Livres Platform Logo" />
         <Stories.TopBarTitle>Livres Platform</Stories.TopBarTitle>
