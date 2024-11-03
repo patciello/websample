@@ -1,91 +1,73 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { FaPlay } from "react-icons/fa";
+
+const fadeInScale = keyframes`
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+`;
 
 export const StoriesContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-y: scroll;
-  height: 400vh;
-  padding: 20px;
-  background-color: #3b3a3a;
+
+  background-color: #000;
+  padding: 0;
+  gap: 12px;
 `;
 
 export const OuterCard = styled.div`
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  margin-bottom: 25px;
-  border-radius: 15px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-  max-width: 700px;
+  background-color: #000;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
+  max-width: 470px;
+  margin-bottom: 12px;
   opacity: 0;
-  animation: zoomIn 0.5s ease forwards;
+  animation: ${fadeInScale} 0.5s ease forwards;
   animation-play-state: paused;
-
-  @keyframes zoomIn {
-    from {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
 
   &.visible {
     animation-play-state: running;
   }
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.8) 0%,
-      rgba(0, 0, 0, 0) 100%
-    );
-    pointer-events: none;
-    border-radius: 0 0 15px 15px;
-  }
 `;
+
 export const StoryCard = styled.div`
   position: relative;
   width: 100%;
-  max-width: 600px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+
+  aspect-ratio: 4/5;
+  background: #262626;
   cursor: pointer;
-  flex-direction: column;
-  transition: transform 0.3s ease;
-  aspect-ratio: 16 / 9;
-  &:hover {
-    transform: scale(1.03);
-  }
 `;
 
 export const Thumbnail = styled.img`
   width: 100%;
-  object-fit: fill;
-  padding: 0;
-  margin-top: -10%;
-  margin-bottom: 0%;
+
+  height: 100%;
+  object-fit: cover;
 `;
 
-export const StoryInfo = styled.div`
-  padding: 0px;
-  text-align: center;
+export const VideoInfo = styled.div`
+  padding: 12px;
+  background: #000;
+`;
+
+export const Title = styled.h3`
+  font-size: 14px;
+  color: #fff;
+  margin: 0;
+  font-weight: 400;
+`;
+
+export const VideoDate = styled.p`
+  font-size: 12px;
+  color: #8e8e8e;
+  margin: 4px 0 0 0;
 `;
 
 export const PlayIcon = styled(FaPlay)`
@@ -98,28 +80,10 @@ export const PlayIcon = styled(FaPlay)`
   pointer-events: none;
 `;
 
-export const Title = styled.h3`
-  font-size: 1.1rem;
-  color: #dedede;
-  margin: 10px 0;
-  align-items: center;
-`;
-
 export const ChannelName = styled.p`
   font-size: 1rem;
   color: #777;
   margin-top: 5p;
-`;
-export const VideoInfo = styled.div`
-  margin-top: 15px;
-  text-align: center;
-  width: 100%;
-`;
-
-export const VideoDate = styled.p`
-  font-size: 0.9rem;
-  color: #ccc;
-  margin: 5px 0;
 `;
 
 export const ViewsCount = styled.p`
