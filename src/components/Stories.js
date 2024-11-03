@@ -12,7 +12,7 @@ export const StoriesContainer = styled.div`
 `;
 
 export const OuterCard = styled.div`
-  background-color: #050505;
+  background-color: #333;
   color: #fff;
   padding: 20px;
   margin-bottom: 25px;
@@ -23,8 +23,42 @@ export const OuterCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
+  position: relative;
+  opacity: 0;
+  animation: zoomIn 0.5s ease forwards;
+  animation-play-state: paused;
 
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  &.visible {
+    animation-play-state: running;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    pointer-events: none;
+    border-radius: 0 0 15px 15px;
+  }
+`;
 export const StoryCard = styled.div`
   position: relative;
   width: 100%;

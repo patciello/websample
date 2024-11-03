@@ -4,11 +4,10 @@ import React from "react";
 import axios from "axios";
 import "./Home.css";
 import * as Stories from "./Stories";
-
 const Home = () => {
   const [youtubeVideos, setYoutubeVideos] = useState([]);
-  const channelId = "UCyGlnihqrujBPlGXs6yi42g"; // Substitua pelo ID do canal desejado
-  const apiKey = process.env.REACT_APP_YOUTUBE_API_KEY; // Substitua pela sua chave de API do YouTube
+  const channelId = "UCyGlnihqrujBPlGXs6yi42g";
+  const apiKey = process.env.REACT_APP_YOUTUBE_API_KEY;
 
   useEffect(() => {
     const fetchYouTubeVideos = async () => {
@@ -45,16 +44,37 @@ const Home = () => {
     }
   }, [channelId, apiKey]);
 
-  // Função para abrir o vídeo no app do YouTube
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    const cards = document.querySelectorAll("[data-card]");
+    cards.forEach((card) => observer.observe(card));
+
+    return () => observer.disconnect();
+  }, [youtubeVideos]);
+
   const openYouTubeVideo = (videoId) => {
     const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
-    window.open(videoUrl, "_blank"); // Abre o link no navegador ou no app, dependendo do dispositivo
+    window.open(videoUrl, "_blank");
   };
 
   return (
     <Stories.StoriesContainer>
       {youtubeVideos.map((video) => (
-        <Stories.OuterCard key={video.id.videoId}>
+        <Stories.OuterCard key={video.id.videoId} data-card>
+          <Stories.Title>{video.snippet.title}</Stories.Title>
+
           <Stories.StoryCard onClick={() => openYouTubeVideo(video.id.videoId)}>
             <Stories.Thumbnail
               src={video.snippet.thumbnails.high.url}
@@ -63,7 +83,6 @@ const Home = () => {
             <Stories.PlayIcon />
           </Stories.StoryCard>
           <Stories.VideoInfo>
-            <Stories.Title>{video.snippet.title}</Stories.Title>
             <Stories.VideoDate>
               {new Date(video.snippet.publishedAt).toLocaleDateString()}
             </Stories.VideoDate>
@@ -73,5 +92,4 @@ const Home = () => {
     </Stories.StoriesContainer>
   );
 };
-
 export default Home;
