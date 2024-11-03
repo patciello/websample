@@ -40,7 +40,7 @@ export const StoryCard = styled.div`
   position: relative;
   width: 100%;
 
-  aspect-ratio: 4/5;
+  aspect-ratio: 16 / 9;
   background: #262626;
   cursor: pointer;
 `;
