@@ -55,7 +55,6 @@ const Home = () => {
     <Stories.StoriesContainer>
       {youtubeVideos.map((video) => (
         <Stories.OuterCard key={video.id.videoId}>
-          <Stories.Title>{video.snippet.title}</Stories.Title>
           <Stories.StoryCard onClick={() => openYouTubeVideo(video.id.videoId)}>
             <Stories.Thumbnail
               src={video.snippet.thumbnails.high.url}
@@ -64,12 +63,10 @@ const Home = () => {
             <Stories.PlayIcon />
           </Stories.StoryCard>
           <Stories.VideoInfo>
+            <Stories.Title>{video.snippet.title}</Stories.Title>
             <Stories.VideoDate>
               {new Date(video.snippet.publishedAt).toLocaleDateString()}
             </Stories.VideoDate>
-            <Stories.ViewsCount>
-              Views: {/* Add view count here */}
-            </Stories.ViewsCount>
           </Stories.VideoInfo>
         </Stories.OuterCard>
       ))}
