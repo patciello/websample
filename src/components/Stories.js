@@ -22,20 +22,34 @@ export const StoriesContainer = styled.div`
   gap: 12px;
 `;
 
+const fadeOutScale = keyframes`
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+`;
+
 export const OuterCard = styled.div`
   background-color: #000;
   width: 100%;
   max-width: 470px;
   margin-bottom: 12px;
   opacity: 0;
-  animation: ${fadeInScale} 0.5s ease forwards;
-  animation-play-state: paused;
+
+  transform: scale(0.95);
 
   &.visible {
-    animation-play-state: running;
+    animation: ${fadeInScale} 0.5s ease forwards;
+  }
+
+  &.hidden {
+    animation: ${fadeOutScale} 0.5s ease forwards;
   }
 `;
-
 export const StoryCard = styled.div`
   position: relative;
   width: 100%;

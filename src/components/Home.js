@@ -50,11 +50,17 @@ const Home = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
+            entry.target.classList.remove("hidden");
+          } else {
+            if (entry.boundingClientRect.top > 0) {
+              entry.target.classList.remove("visible");
+              entry.target.classList.add("hidden");
+            }
           }
         });
       },
       {
-        threshold: 0.1,
+        threshold: 0.5,
       }
     );
 
