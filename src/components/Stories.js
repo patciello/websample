@@ -112,11 +112,32 @@ export const TopBar = styled.div`
   background-color: #000;
   width: 100%;
   gap: 12px;
-  font-family: "Roboto", sans-serif;
+`;
+
+export const Logo = styled.img`
+  width: auto;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 12px;
 `;
 
 export const TopBarTitle = styled.h1`
   color: #fff;
   font-size: 20px;
   margin: 0;
+  font-family: "Roboto", sans-serif;
+`;
+
+export const BottomBar = styled.div`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  padding: 16px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #262626;
+  z-index: 1000;
 `;
