@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import React from "react";
 import axios from "axios";
 import * as Stories from "./Stories";
-import logo from "../assets/livres.png";
+import logo from "../assets/logos/livres.png";
 
 const Home = () => {
   const [youtubeVideos, setYoutubeVideos] = useState([]);
