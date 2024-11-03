@@ -11,7 +11,6 @@ const fadeInScale = keyframes`
     transform: scale(1);
   }
 `;
-
 export const StoriesContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -23,31 +22,50 @@ export const StoriesContainer = styled.div`
 `;
 
 const fadeOutScale = keyframes`
-  from {
-    opacity: 1;
-    transform: scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-`;
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0.5;
+      transform: scale(0.95);
+    }
+  `;
 
 export const OuterCard = styled.div`
   background-color: #000;
   width: 100%;
   max-width: 470px;
   margin-bottom: 12px;
-  opacity: 0;
-
+  opacity: 0.5;
   transform: scale(0.95);
+  transition: all 0.3s ease;
+  position: relative;
 
-  &.visible {
-    animation: ${fadeInScale} 0.5s ease forwards;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    opacity: 1;
   }
 
-  &.hidden {
-    animation: ${fadeOutScale} 0.5s ease forwards;
+  &.center {
+    animation: ${fadeInScale} 0.3s ease forwards;
+    &::after {
+      opacity: 0;
+    }
+  }
+  &.not-center {
+    animation: ${fadeOutScale} 0.3s ease forwards;
+    &::after {
+      opacity: 1;
+    }
   }
 `;
 export const StoryCard = styled.div`
@@ -104,4 +122,41 @@ export const ViewsCount = styled.p`
   font-size: 0.9rem;
   color: #ccc;
   margin: 5px 0;
+`;
+
+export const TopBar = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: #000;
+  width: 100%;
+  gap: 12px;
+`;
+
+export const TopBarTitle = styled.h1`
+  color: #fff;
+  font-size: 20px;
+  margin: 0;
+`;
+
+export const HorizontalScroll = styled.div`
+  display: flex;
+  overflow-x: auto;
+  padding: 16px;
+  gap: 12px;
+  background-color: #000;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+export const StoryCircle = styled.div`
+  min-width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background: #262626;
+  border: 2px solid #333;
 `;

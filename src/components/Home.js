@@ -48,19 +48,26 @@ const Home = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            entry.target.classList.remove("hidden");
+          const rect = entry.boundingClientRect;
+          const windowHeight = window.innerHeight;
+          const elementCenter = rect.top + rect.height / 2;
+          const viewportCenter = windowHeight / 2;
+
+          // Check if element is centered (within 150px of viewport center)
+          const isCentered = Math.abs(elementCenter - viewportCenter) < 150;
+
+          if (isCentered) {
+            entry.target.classList.add("center");
+            entry.target.classList.remove("not-center");
           } else {
-            if (entry.boundingClientRect.top > 0) {
-              entry.target.classList.remove("visible");
-              entry.target.classList.add("hidden");
-            }
+            entry.target.classList.remove("center");
+            entry.target.classList.add("not-center");
           }
         });
       },
       {
-        threshold: 0.5,
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+        rootMargin: "-10% 0px -10% 0px",
       }
     );
 
@@ -69,29 +76,43 @@ const Home = () => {
 
     return () => observer.disconnect();
   }, [youtubeVideos]);
-
   const openYouTubeVideo = (videoId) => {
     const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
     window.open(videoUrl, "_blank");
   };
 
   return (
-    <Stories.StoriesContainer>
-      {youtubeVideos.map((video) => (
-        <Stories.OuterCard key={video.id.videoId} data-card>
-          <Stories.StoryCard onClick={() => openYouTubeVideo(video.id.videoId)}>
-            <Stories.Thumbnail
-              src={video.snippet.thumbnails.high.url}
-              alt={video.snippet.title}
-            />
-            <Stories.PlayIcon />
-          </Stories.StoryCard>
-          <Stories.VideoInfo>
-            <Stories.Title>{video.snippet.title}</Stories.Title>
-          </Stories.VideoInfo>
-        </Stories.OuterCard>
-      ))}
-    </Stories.StoriesContainer>
+    <>
+      <Stories.TopBar>
+        <Stories.PlayIcon size={24} color="#fff" />
+        <Stories.TopBarTitle>Livres Platform</Stories.TopBarTitle>
+      </Stories.TopBar>
+
+      <Stories.HorizontalScroll>
+        {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
+          <Stories.StoryCircle key={item} />
+        ))}
+      </Stories.HorizontalScroll>
+
+      <Stories.StoriesContainer>
+        {youtubeVideos.map((video) => (
+          <Stories.OuterCard key={video.id.videoId} data-card>
+            <Stories.StoryCard
+              onClick={() => openYouTubeVideo(video.id.videoId)}
+            >
+              <Stories.Thumbnail
+                src={video.snippet.thumbnails.high.url}
+                alt={video.snippet.title}
+              />
+              <Stories.PlayIcon />
+            </Stories.StoryCard>
+            <Stories.VideoInfo>
+              <Stories.Title>{video.snippet.title}</Stories.Title>
+            </Stories.VideoInfo>
+          </Stories.OuterCard>
+        ))}
+      </Stories.StoriesContainer>
+    </>
   );
 };
 export default Home;
