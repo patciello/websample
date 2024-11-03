@@ -72,9 +72,6 @@ const Home = () => {
             </Stories.StoryCard>
             <Stories.VideoInfo>
               <Stories.Title>{video.snippet.title}</Stories.Title>
-              <Stories.VideoDate>
-                {new Date(video.snippet.publishedAt).toLocaleDateString()}
-              </Stories.VideoDate>
             </Stories.VideoInfo>
           </Stories.OuterCard>
         ))}
