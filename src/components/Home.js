@@ -76,10 +76,6 @@ const Home = () => {
           </Stories.OuterCard>
         ))}
       </Stories.StoriesContainer>
-
-      <Stories.BottomBar>
-        {/* Bottom bar content will go here */}
-      </Stories.BottomBar>
     </>
   );
 };

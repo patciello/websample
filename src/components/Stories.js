@@ -15,12 +15,28 @@ export const StoriesContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
   background-color: #000;
-  padding: 0;
+  padding: 0 0 70px 0; // Added padding bottom for fixed bottom bar
   gap: 12px;
+  overflow-x: hidden; // Prevent horizontal scroll
+  width: 100%;
 `;
 
+export const BottomBar = styled.div`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  padding: 16px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #262626;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
+`;
 const fadeOutScale = keyframes`
     from {
       opacity: 1;
@@ -120,24 +136,9 @@ export const Logo = styled.img`
   border-radius: 50%;
   margin-right: 12px;
 `;
-
 export const TopBarTitle = styled.h1`
   color: #fff;
   font-size: 20px;
   margin: 0;
   font-family: "Roboto", sans-serif;
-`;
-
-export const BottomBar = styled.div`
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #000;
-  padding: 16px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border-top: 1px solid #262626;
-  z-index: 1000;
 `;
