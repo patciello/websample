@@ -52,29 +52,28 @@ const Home = () => {
   };
 
   return (
-    <>
+    return (
       <Stories.StoriesContainer>
-        <div className="container">
-          <h1>Tabernaculos 2K24</h1>
-        </div>
         {youtubeVideos.map((video) => (
-          <Stories.StoryCard
-            key={video.id.videoId}
-            onClick={() => openYouTubeVideo(video.id.videoId)}
-          >
-            <Stories.Thumbnail
-              src={video.snippet.thumbnails.high.url}
-              alt={video.snippet.title}
-            />
-            <Stories.PlayIcon />
-            <Stories.StoryInfo>
-              <Stories.Title>{video.snippet.title}</Stories.Title>
-            </Stories.StoryInfo>
-          </Stories.StoryCard>
+          <Stories.OuterCard key={video.id.videoId}>
+            <Stories.Title>{video.snippet.title}</Stories.Title>
+            <Stories.StoryCard onClick={() => openYouTubeVideo(video.id.videoId)}>
+              <Stories.Thumbnail
+                src={video.snippet.thumbnails.high.url}
+                alt={video.snippet.title}
+              />
+              <Stories.PlayIcon />
+            </Stories.StoryCard>
+            <Stories.VideoInfo>
+              <Stories.VideoDate>
+                {new Date(video.snippet.publishedAt).toLocaleDateString()}
+              </Stories.VideoDate>
+              <Stories.ViewsCount>Views: {/* Add view count here */}</Stories.ViewsCount>
+            </Stories.VideoInfo>
+          </Stories.OuterCard>
         ))}
       </Stories.StoriesContainer>
-    </>
-  );
-};
+    );
+    };
 
 export default Home;

@@ -11,11 +11,24 @@ export const StoriesContainer = styled.div`
   background-color: #3b3a3a;
 `;
 
+export const OuterCard = styled.div`
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export const StoryCard = styled.div`
   position: relative;
   width: 100%;
   max-width: 600px;
-  margin-bottom: 15px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
@@ -35,19 +48,6 @@ export const Thumbnail = styled.img`
   margin-top: -10%;
   margin-bottom: 0%;
 `;
-export const OuterCard = styled.div`
-  background-color: #333; /* Tons escuros */
-  color: #fff;
-  padding: 20px;
-  margin-bottom: 25px;
-  border-radius: 15px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-  max-width: 700px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
 
 export const StoryInfo = styled.div`
   padding: 0px;
@@ -65,9 +65,9 @@ export const PlayIcon = styled(FaPlay)`
 `;
 
 export const Title = styled.h3`
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #dedede;
-  margin: 5px 10;
+  margin: 10px 0;
 `;
 
 export const ChannelName = styled.p`
@@ -75,13 +75,12 @@ export const ChannelName = styled.p`
   color: #777;
   margin-top: 5p;
 `;
-
-//---------------Video Info
 export const VideoInfo = styled.div`
   margin-top: 15px;
   text-align: center;
   width: 100%;
 `;
+
 export const VideoDate = styled.p`
   font-size: 0.9rem;
   color: #ccc;
@@ -91,4 +90,5 @@ export const VideoDate = styled.p`
 export const ViewsCount = styled.p`
   font-size: 0.9rem;
   color: #ccc;
+  margin: 5px 0;
 `;
