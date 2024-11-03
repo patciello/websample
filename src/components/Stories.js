@@ -12,7 +12,7 @@ export const StoriesContainer = styled.div`
 `;
 
 export const OuterCard = styled.div`
-  background-color: #333;
+  background-color: #050505;
   color: #fff;
   padding: 20px;
   margin-bottom: 25px;
@@ -65,9 +65,10 @@ export const PlayIcon = styled(FaPlay)`
 `;
 
 export const Title = styled.h3`
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #dedede;
   margin: 10px 0;
+  align-items: center;
 `;
 
 export const ChannelName = styled.p`
