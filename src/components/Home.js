@@ -46,7 +46,7 @@ const Home = () => {
   };
 
   return (
-    <div style={{ backgroundColor: "#000", minHeight: "100vh" }}>
+    <div className="container">
       <Stories.TopBar>
         <Stories.Logo src={logo} alt="Livres Platform Logo" />
         <Stories.TopBarTitle>Livres Platform</Stories.TopBarTitle>
@@ -76,12 +76,6 @@ const Home = () => {
           </Stories.OuterCard>
         ))}
       </Stories.StoriesContainer>
-
-      <Stories.BottomBar>
-        <div>Home</div>
-        <div>Search</div>
-        <div>Profile</div>
-      </Stories.BottomBar>
     </div>
   );
 };
