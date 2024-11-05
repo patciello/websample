@@ -1,5 +1,6 @@
 import { useState } from "react";
 import React from "react";
+import "../index.css";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -71,44 +72,46 @@ const BottomBar = () => {
   };
 
   return (
-    <BottomBarContainer>
-      <StyledLink to="/" onClick={() => handleIconClick("home")}>
-        <IconButton
-          isActive={activeIcon === "home"}
-          onClick={() => handleIconClick("home")}
-          whileHover={{ scale: 1.1 }}
-        >
-          <GoHome />
-        </IconButton>
-      </StyledLink>
-      <StyledLink to="/category" onClick={() => handleIconClick("category")}>
-        <IconButton
-          isActive={activeIcon === "category"}
-          onClick={() => handleIconClick("category")}
-          whileHover={{ scale: 1.1 }}
-        >
-          <TbCategory />
-        </IconButton>
-      </StyledLink>
-      <StyledLink to="/events" onClick={() => handleIconClick("event")}>
-        <IconButton
-          isActive={activeIcon === "event"}
-          onClick={() => handleIconClick("event")}
-          whileHover={{ scale: 1.1 }}
-        >
-          <MdOutlineEventAvailable />
-        </IconButton>
-      </StyledLink>
-      <StyledLink to="/fastings" onClick={() => handleIconClick("fastings")}>
-        <IconButton
-          isActive={activeIcon === "fastings"}
-          onClick={() => handleIconClick("fastings")}
-          whileHover={{ scale: 1.1 }}
-        >
-          <PiHandsPrayingDuotone />
-        </IconButton>
-      </StyledLink>
-    </BottomBarContainer>
+    <div className="bottom-bar">
+      <BottomBarContainer>
+        <StyledLink to="/" onClick={() => handleIconClick("home")}>
+          <IconButton
+            isActive={activeIcon === "home"}
+            onClick={() => handleIconClick("home")}
+            whileHover={{ scale: 1.1 }}
+          >
+            <GoHome />
+          </IconButton>
+        </StyledLink>
+        <StyledLink to="/category" onClick={() => handleIconClick("category")}>
+          <IconButton
+            isActive={activeIcon === "category"}
+            onClick={() => handleIconClick("category")}
+            whileHover={{ scale: 1.1 }}
+          >
+            <TbCategory />
+          </IconButton>
+        </StyledLink>
+        <StyledLink to="/events" onClick={() => handleIconClick("event")}>
+          <IconButton
+            isActive={activeIcon === "event"}
+            onClick={() => handleIconClick("event")}
+            whileHover={{ scale: 1.1 }}
+          >
+            <MdOutlineEventAvailable />
+          </IconButton>
+        </StyledLink>
+        <StyledLink to="/fastings" onClick={() => handleIconClick("fastings")}>
+          <IconButton
+            isActive={activeIcon === "fastings"}
+            onClick={() => handleIconClick("fastings")}
+            whileHover={{ scale: 1.1 }}
+          >
+            <PiHandsPrayingDuotone />
+          </IconButton>
+        </StyledLink>
+      </BottomBarContainer>
+    </div>
   );
 };
 
