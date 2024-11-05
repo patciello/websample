@@ -28,7 +28,7 @@ function App() {
             </div>
           </>
         ) : (
-          <div className="container">
+          <div className="containerDesktop">
             <h2>
               Olá! Este é o app da Livres, ainda estamos em construção, por este
               motivo não vai fucionar por aqui...Mas é por pouco tempo!
