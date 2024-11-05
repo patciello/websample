@@ -47,7 +47,7 @@ const Home = () => {
   };
 
   return (
-    <div className="media-container fixed-bottom">
+    <div className="container">
       <Stories.TopBar>
         <Stories.Logo src={logo} alt="Livres Platform Logo" />
         <Stories.TopBarTitle>Livres Platform</Stories.TopBarTitle>
