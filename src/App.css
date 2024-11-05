@@ -14,8 +14,8 @@ h2 {
 }
 
 img {
-  width: 100%;
-  height: 100%;
+  width: 10%;
+  height: 10%;
   object-fit: fill;
   align-items: center;
 }
