@@ -72,7 +72,7 @@ const BottomBar = () => {
   };
 
   return (
-    <div>
+    <div className="bottom-bar">
       <BottomBarContainer>
         <StyledLink to="/" onClick={() => handleIconClick("home")}>
           <IconButton
