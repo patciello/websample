@@ -6,6 +6,7 @@ import Category from "./components/Category";
 import Events from "./components/Events";
 import Fastings from "./components/Fastings";
 import "./App.css";
+import qrCode from "./images/qrcode.png";
 import BottomBar from "./components/BottomBar";
 
 function App() {
@@ -28,19 +29,19 @@ function App() {
           </>
         ) : (
           <div className="container">
-            <h1>
+            <h2>
               Olá! Este é o app da Livres, ainda estamos em construção, por este
               motivo não vai fucionar por aqui...Mas é por pouco tempo!
+            </h2>
+            <h1>
+              Quer ver como ele está ficando no celular? É só acessar escanear o
+              Qr Code! Que Deus te abençoe!
             </h1>
-            <p>
-              Aqui está o QR Code para acessa-lo agora mesmo! Que Deus te
-              abençoe!
-            </p>
+            <img src={qrCode} alt="QR Code" />
           </div>
         )}
       </div>
     </Router>
   );
 }
-
 export default App;
