@@ -6,7 +6,7 @@ import Category from "./components/Category";
 import Events from "./components/Events";
 import Fastings from "./components/Fastings";
 import "./App.css";
-import qrCode from "./images/qrcode.png";
+import qrCode from "./assets/images/qrcode.png";
 import BottomBar from "./components/BottomBar";
 
 function App() {
