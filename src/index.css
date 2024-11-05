@@ -153,23 +153,24 @@ form textarea {
     display: none;
   }
 
-  .bottom-bar {
-    display: flex;
-    justify-content: space-around;
+  .fixed-bottom {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #1f1f1f;
-    padding: 0.5rem 0;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+    background: white;
+    z-index: 1000;
   }
 
-  .bottom-bar a {
-    color: #42a5f5;
-    text-decoration: none;
-    font-weight: bold;
-    text-align: center;
+  .bottom-bar {
+    padding: 15px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Add padding to body to prevent content from being hidden behind fixed bar */
+  body {
+    padding-bottom: 100px;
+  }    text-align: center;
   }
 
   .bottom-bar a:hover {
@@ -179,5 +180,10 @@ form textarea {
   .bottom-bar img {
     height: 24px;
     margin-bottom: 0.25rem;
+  }
+
+  /* Add padding to body to prevent content from being hidden behind fixed bar */
+  body {
+    padding-bottom: 100px;
   }
 }
