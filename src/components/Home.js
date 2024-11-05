@@ -4,7 +4,7 @@ import React from "react";
 import axios from "axios";
 import * as Stories from "./Stories";
 import logo from "../assets/logos/livres.png";
-import "../index.css";
+import styled from "styled-components";
 
 const Home = () => {
   const [youtubeVideos, setYoutubeVideos] = useState([]);
@@ -47,7 +47,7 @@ const Home = () => {
   };
 
   return (
-    <>
+    <div>
       <Stories.TopBar>
         <Stories.Logo src={logo} alt="Livres Platform Logo" />
         <Stories.TopBarTitle>Livres Platform</Stories.TopBarTitle>
@@ -77,7 +77,7 @@ const Home = () => {
           </Stories.OuterCard>
         ))}
       </Stories.StoriesContainer>
-    </>
+    </div>
   );
 };
 
