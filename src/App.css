@@ -26,7 +26,6 @@ img {
   align-items: center;
   min-height: 100vh;
   background-image: src("./assets/images/backgroundDesktop.webp");
-  background-color: #f8f9fa;
 }
 
 .desktop-content {
