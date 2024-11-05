@@ -4,6 +4,7 @@ import React from "react";
 import axios from "axios";
 import * as Stories from "./Stories";
 import logo from "../assets/logos/livres.png";
+import "../index.css";
 
 const Home = () => {
   const [youtubeVideos, setYoutubeVideos] = useState([]);
@@ -46,7 +47,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className="bottom-bar">
       <Stories.TopBar>
         <Stories.Logo src={logo} alt="Livres Platform Logo" />
         <Stories.TopBarTitle>Livres Platform</Stories.TopBarTitle>
