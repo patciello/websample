@@ -29,15 +29,15 @@ function App() {
           </>
         ) : (
           <div className="containerDesktop">
-            <div className="desktop-card">
-              <h2>
+            <div className="desktop-content">
+              <h1>
                 Olá! Este é o app da Livres, ainda estamos em construção, por
                 este motivo não vai fucionar por aqui...Mas é por pouco tempo!
-              </h2>
-              <h1>
+              </h1>
+              <h2>
                 Quer ver como ele está ficando no celular? É só acessar escanear
                 o Qr Code! Que Deus te abençoe!
-              </h1>
+              </h2>
               <img src={qrCode} alt="QR Code" />
             </div>
           </div>
