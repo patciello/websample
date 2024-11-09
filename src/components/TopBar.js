@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import livresLogo from "../assets/logos/livres.png";
 
 export const TopBarContainer = styled.div`
   display: flex;
@@ -23,11 +24,11 @@ export const Logo = styled.img`
   margin-right: 12px;
 `;
 
-const TopBar = ({ title, logoSrc }) => {
+const TopBar = () => {
   return (
     <TopBarContainer>
-      {logoSrc && <Logo src={logoSrc} alt="logo" />}
-      <TopBarTitle>{title}</TopBarTitle>
+      <Logo src={livresLogo} alt="Livres logo" />
+      <TopBarTitle>Livres</TopBarTitle>
     </TopBarContainer>
   );
 };

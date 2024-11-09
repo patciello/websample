@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import TopBar from "./TopBar";
+import livresLogo from "../assets/logos/livres-logo.png";
 
 const LayoutContainer = styled.div`
   display: flex;
@@ -14,7 +15,7 @@ const Content = styled.main`
 const Layout = ({ children }) => {
   return (
     <LayoutContainer>
-      <TopBar title="Your App Name" logoSrc="/logo.png" />
+      <TopBar title="Livres Platform" logoSrc={livresLogo} />
       <Content>{children}</Content>
     </LayoutContainer>
   );
