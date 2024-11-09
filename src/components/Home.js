@@ -47,36 +47,34 @@ const Home = () => {
   };
 
   return (
-    <div className="container">
-      <Stories.TopBar>
+    <div className="container" style={{ paddingBottom: "60px" }}>
+      <Stories.TopBar
+        style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000 }}
+      >
         <Stories.Logo src={logo} alt="Livres Platform Logo" />
         <Stories.TopBarTitle>Livres Platform</Stories.TopBarTitle>
       </Stories.TopBar>
 
-      <Stories.HorizontalScroll>
-        {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
-          <Stories.StoryCircle key={item} />
-        ))}
-      </Stories.HorizontalScroll>
-
-      <Stories.StoriesContainer>
-        {youtubeVideos.map((video) => (
-          <Stories.OuterCard key={video.id.videoId}>
-            <Stories.StoryCard
-              onClick={() => openYouTubeVideo(video.id.videoId)}
-            >
-              <Stories.Thumbnail
-                src={video.snippet.thumbnails.high.url}
-                alt={video.snippet.title}
-              />
-              <Stories.PlayIcon />
-            </Stories.StoryCard>
-            <Stories.VideoInfo>
-              <Stories.Title>{video.snippet.title}</Stories.Title>
-            </Stories.VideoInfo>
-          </Stories.OuterCard>
-        ))}
-      </Stories.StoriesContainer>
+      <div style={{ marginTop: "60px" }}>
+        <Stories.StoriesContainer>
+          {youtubeVideos.map((video) => (
+            <Stories.OuterCard key={video.id.videoId}>
+              <Stories.StoryCard
+                onClick={() => openYouTubeVideo(video.id.videoId)}
+              >
+                <Stories.Thumbnail
+                  src={video.snippet.thumbnails.high.url}
+                  alt={video.snippet.title}
+                />
+                <Stories.PlayIcon />
+              </Stories.StoryCard>
+              <Stories.VideoInfo>
+                <Stories.Title>{video.snippet.title}</Stories.Title>
+              </Stories.VideoInfo>
+            </Stories.OuterCard>
+          ))}
+        </Stories.StoriesContainer>
+      </div>
     </div>
   );
 };

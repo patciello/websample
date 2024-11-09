@@ -30,13 +30,11 @@ function App() {
         ) : (
           <div className="containerDesktop">
             <div className="desktop-content">
-              <h1>
-                Olá! Este é o app da Livres, ainda estamos em construção, por
-                este motivo não vai fucionar por aqui...Mas é por pouco tempo!
-              </h1>
+              <h1>A Paz!</h1>
+              <h1>Este é o web app da Livres! Ainda estamos em construção</h1>
               <h2>
-                Quer ver como ele está ficando no celular? É só acessar escanear
-                o Qr Code! Que Deus te abençoe!
+                Pelo pc não é possível ver, mas quer ver como ele está ficando
+                no celular? É só escanear o QrCode!
               </h2>
               <img src={qrCode} alt="QR Code" />
             </div>
