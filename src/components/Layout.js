@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import TopBar from "./TopBar";
-import livresLogo from "../assets/logos/livres-logo.png";
+import livresLogo from "../assets/logos/livres.png";
 
 const LayoutContainer = styled.div`
   display: flex;
