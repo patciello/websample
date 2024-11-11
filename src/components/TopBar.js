@@ -1,14 +1,10 @@
 import React from "react";
-import livresLogo from "../assets/logos/livres.png";
 import "./TopBar.css";
 
-const TopBar = () => {
-  return (
-    <div className="topbar-container">
-      <img className="topbar-logo" src={livresLogo} alt="Livres logo" />
-      <h1 className="topbar-title">Livres</h1>
-    </div>
-  );
-};
+export const TopBar = ({ children }) => (
+  <div className="topbar">{children}</div>
+);
 
-export default TopBar;
+export const TopBarTitle = ({ children }) => (
+  <h1 className="topbar-title">{children}</h1>
+);
