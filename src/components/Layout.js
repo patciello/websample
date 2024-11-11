@@ -14,10 +14,10 @@ const Content = styled.main`
 
 const Layout = ({ children }) => {
   return (
-    <LayoutContainer>
+    <>
       <TopBar title="Livres Platform" logoSrc={livresLogo} />
       <Content>{children}</Content>
-    </LayoutContainer>
+    </>
   );
 };
 
