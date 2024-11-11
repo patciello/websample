@@ -5,7 +5,7 @@ import axios from "axios";
 import * as Stories from "./Stories";
 import logo from "../assets/logos/livres.png";
 import "../index.css";
-import Section from "./Section";
+import * as Section from "./Section";
 
 const Home = () => {
   const [youtubeVideos, setYoutubeVideos] = useState([]);
