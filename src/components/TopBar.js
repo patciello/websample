@@ -19,7 +19,7 @@ export const TopBarTitle = styled.h1`
 
 export const Logo = styled.img`
   width: auto;
-  height: 32px;
+  height: 64px;
   border-radius: 50%;
   margin-right: 12px;
 `;

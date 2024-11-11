@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import axios from "axios";
+import * as Stories from "./Stories";
+import logo from "../assets/logos/livres.png";
 
 const GridContainer = styled.div`
   display: grid;
@@ -46,6 +49,13 @@ const Category = () => {
 
   return (
     <div>
+      <Stories.TopBar
+        style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000 }}
+      >
+        <Stories.Logo src={logo} alt="Livres Platform Logo" />
+        <Stories.TopBarTitle>Livres Platform</Stories.TopBarTitle>
+      </Stories.TopBar>
+
       <TopBar>
         <Title>Categories</Title>
       </TopBar>

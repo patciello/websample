@@ -5,6 +5,7 @@ import axios from "axios";
 import * as Stories from "./Stories";
 import logo from "../assets/logos/livres.png";
 import "../index.css";
+import Section from "./Section";
 
 const Home = () => {
   const [youtubeVideos, setYoutubeVideos] = useState([]);
@@ -56,7 +57,7 @@ const Home = () => {
       </Stories.TopBar>
 
       <div style={{ marginTop: "60px" }}>
-        <Stories.StoriesContainer>
+        <Section titles="Recentes">
           {youtubeVideos.map((video) => (
             <Stories.OuterCard key={video.id.videoId}>
               <Stories.StoryCard
@@ -73,10 +74,27 @@ const Home = () => {
               </Stories.VideoInfo>
             </Stories.OuterCard>
           ))}
-        </Stories.StoriesContainer>
+        </Section>
+        <Section titles="Em Alta">
+          {youtubeVideos.map((video) => (
+            <Stories.OuterCard key={video.id.videoId}>
+              <Stories.StoryCard
+                onClick={() => openYouTubeVideo(video.id.videoId)}
+              >
+                <Stories.Thumbnail
+                  src={video.snippet.thumbnails.high.url}
+                  alt={video.snippet.title}
+                />
+                <Stories.PlayIcon />
+              </Stories.StoryCard>
+              <Stories.VideoInfo>
+                <Stories.Title>{video.snippet.title}</Stories.Title>
+              </Stories.VideoInfo>
+            </Stories.OuterCard>
+          ))}
+        </Section>
       </div>
     </div>
   );
 };
-
 export default Home;
