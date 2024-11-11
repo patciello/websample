@@ -1,63 +1,48 @@
 /* src/components/Home.js */
 import { useEffect, useState } from "react";
 import React from "react";
-import axios from "axios";
 import * as Stories from "./Stories";
 import logo from "../assets/logos/livres.png";
-import "../index.css";
-import * as Section from "./Section";
+import "./Home.css";
+import { fetchYouTubeVideos } from "../services/youtubeApi";
+import { YOUTUBE_CONFIG } from "../constants/config";
+import { formatVideoUrl, handleExternalLink } from "../utils/helpers";
 
 const Home = () => {
   const [youtubeVideos, setYoutubeVideos] = useState([]);
-  const channelId = "UCyGlnihqrujBPlGXs6yi42g";
   const apiKey = process.env.REACT_APP_YOUTUBE_API_KEY;
 
   useEffect(() => {
-    const fetchYouTubeVideos = async () => {
-      try {
-        const response = await axios.get(
-          `https://www.googleapis.com/youtube/v3/search`,
-          {
-            params: {
-              part: "snippet",
-              channelId: channelId,
-              maxResults: 8,
-              order: "date",
-              type: "video",
-              key: apiKey,
-            },
-          }
-        );
-
-        if (response.data && response.data.items) {
-          setYoutubeVideos(response.data.items);
+    const loadVideos = async () => {
+      if (apiKey) {
+        try {
+          const videos = await fetchYouTubeVideos(
+            YOUTUBE_CONFIG.CHANNEL_ID,
+            apiKey
+          );
+          setYoutubeVideos(videos);
+        } catch (error) {
+          console.error("Failed to load videos:", error);
         }
-      } catch (error) {
-        console.error("Erro ao buscar vídeos do YouTube:", error);
       }
     };
 
-    if (apiKey) {
-      fetchYouTubeVideos();
-    }
-  }, [channelId, apiKey]);
+    loadVideos();
+  }, [apiKey]);
 
   const openYouTubeVideo = (videoId) => {
-    const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
-    window.open(videoUrl, "_blank");
+    handleExternalLink(formatVideoUrl(videoId));
   };
 
   return (
-    <div className="container" style={{ paddingBottom: "60px" }}>
-      <Stories.TopBar
-        style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000 }}
-      >
+    <div className="container">
+      <Stories.TopBar className="top-bar">
         <Stories.Logo src={logo} alt="Livres Platform Logo" />
         <Stories.TopBarTitle>Livres Platform</Stories.TopBarTitle>
       </Stories.TopBar>
 
-      <div style={{ marginTop: "60px" }}>
-        <Section.StoriesContainer>
+      <div className="content">
+        <Stories.StoriesContainer>
           {youtubeVideos.map((video) => (
             <Stories.OuterCard key={video.id.videoId}>
               <Stories.StoryCard
@@ -74,7 +59,7 @@ const Home = () => {
               </Stories.VideoInfo>
             </Stories.OuterCard>
           ))}
-        </Section.StoriesContainer>
+        </Stories.StoriesContainer>
       </div>
     </div>
   );

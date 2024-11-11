@@ -1,26 +1,12 @@
-import styled from "styled-components";
+import React from "react";
 import { FaBell } from "react-icons/fa";
-
-export const NotificationButtonContainer = styled.button`
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  z-index: 1000;
-
-  &:hover {
-    color: #f90;
-  }
-`;
+import "./NotificationButton.css";
 
 const NotificationButton = () => {
   return (
-    <NotificationButtonContainer>
+    <button className="notification-button">
       <FaBell size={24} />
-    </NotificationButtonContainer>
+    </button>
   );
 };
 

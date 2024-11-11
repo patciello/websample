@@ -1,23 +1,14 @@
-import styled from "styled-components";
+import React from "react";
 import TopBar from "./TopBar";
 import livresLogo from "../assets/logos/livres.png";
-
-const LayoutContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-`;
-
-const Content = styled.main`
-  flex: 1;
-`;
+import "./Layout.css";
 
 const Layout = ({ children }) => {
   return (
-    <>
+    <div className="layout-container">
       <TopBar title="Livres Platform" logoSrc={livresLogo} />
-      <Content>{children}</Content>
-    </>
+      <main className="layout-content">{children}</main>
+    </div>
   );
 };
 
