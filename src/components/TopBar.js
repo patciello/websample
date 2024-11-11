@@ -1,35 +1,13 @@
-import styled from "styled-components";
+import React from "react";
 import livresLogo from "../assets/logos/livres.png";
-
-export const TopBarContainer = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 16px;
-  background-color: #000;
-  width: 100%;
-  gap: 12px;
-`;
-
-export const TopBarTitle = styled.h1`
-  color: #fff;
-  font-size: 20px;
-  margin: 0;
-  font-family: "Roboto", sans-serif;
-`;
-
-export const Logo = styled.img`
-  width: auto;
-  height: 64px;
-  border-radius: 50%;
-  margin-right: 12px;
-`;
+import "./TopBar.css";
 
 const TopBar = () => {
   return (
-    <TopBarContainer>
-      <Logo src={livresLogo} alt="Livres logo" />
-      <TopBarTitle>Livres</TopBarTitle>
-    </TopBarContainer>
+    <div className="topbar-container">
+      <img className="topbar-logo" src={livresLogo} alt="Livres logo" />
+      <h1 className="topbar-title">Livres</h1>
+    </div>
   );
 };
 
