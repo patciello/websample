@@ -15,35 +15,33 @@ function App() {
 
   return (
     <Router>
-      <Layout>
-        <div>
-          {isMobile ? (
-            <>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/category" element={<Category />} />
-                <Route path="/events" element={<Events />} />
-                <Route path="/fastings" element={<Fastings />} />
-              </Routes>
-              <div className="bottom-bar">
-                <BottomBar />
-              </div>
-            </>
-          ) : (
-            <div className="containerDesktop">
-              <div className="desktop-content">
-                <h1>A Paz!</h1>
-                <h1>Este é o web app da Livres! Ainda estamos em construção</h1>
-                <h2>
-                  Pelo pc não é possível ver, mas quer ver como ele está ficando
-                  no celular? É só escanear o QrCode!
-                </h2>
-                <img src={qrCode} alt="QR Code" />
-              </div>
+      <div>
+        {isMobile ? (
+          <>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/category" element={<Category />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/fastings" element={<Fastings />} />
+            </Routes>
+            <div className="bottom-bar">
+              <BottomBar />
             </div>
-          )}
-        </div>
-      </Layout>
+          </>
+        ) : (
+          <div className="containerDesktop">
+            <div className="desktop-content">
+              <h1>A Paz!</h1>
+              <h1>Este é o web app da Livres! Ainda estamos em construção</h1>
+              <h2>
+                Pelo pc não é possível ver, mas quer ver como ele está ficando
+                no celular? É só escanear o QrCode!
+              </h2>
+              <img src={qrCode} alt="QR Code" />
+            </div>
+          </div>
+        )}
+      </div>
     </Router>
   );
 }
