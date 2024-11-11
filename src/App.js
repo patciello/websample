@@ -14,8 +14,8 @@ function App() {
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
   return (
-    <Layout>
-      <Router>
+    <Router>
+      <Layout>
         <div>
           {isMobile ? (
             <>
@@ -43,8 +43,8 @@ function App() {
             </div>
           )}
         </div>
-      </Router>
-    </Layout>
+      </Layout>
+    </Router>
   );
 }
 export default App;
