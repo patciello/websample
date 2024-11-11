@@ -57,7 +57,7 @@ const Home = () => {
       </Stories.TopBar>
 
       <div style={{ marginTop: "60px" }}>
-        <Section titles="Recentes">
+        <Section.StoriesContainer>
           {youtubeVideos.map((video) => (
             <Stories.OuterCard key={video.id.videoId}>
               <Stories.StoryCard
@@ -74,27 +74,10 @@ const Home = () => {
               </Stories.VideoInfo>
             </Stories.OuterCard>
           ))}
-        </Section>
-        <Section titles="Em Alta">
-          {youtubeVideos.map((video) => (
-            <Stories.OuterCard key={video.id.videoId}>
-              <Stories.StoryCard
-                onClick={() => openYouTubeVideo(video.id.videoId)}
-              >
-                <Stories.Thumbnail
-                  src={video.snippet.thumbnails.high.url}
-                  alt={video.snippet.title}
-                />
-                <Stories.PlayIcon />
-              </Stories.StoryCard>
-              <Stories.VideoInfo>
-                <Stories.Title>{video.snippet.title}</Stories.Title>
-              </Stories.VideoInfo>
-            </Stories.OuterCard>
-          ))}
-        </Section>
+        </Section.StoriesContainer>
       </div>
     </div>
   );
 };
+
 export default Home;
